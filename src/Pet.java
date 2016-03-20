@@ -3,11 +3,9 @@
  */
 public class Pet<T extends Animals> {
     private T pet;
-    private String type;
 
     public Pet(T _pet) {
         pet = _pet;
-//        type = T.;
     }
 
     public String getName(){
