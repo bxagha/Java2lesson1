@@ -5,5 +5,9 @@ public class Cat extends Animals {
     public Cat(String _name, int _age) {
         name = _name;
         age = _age;
+        type = this.getClass().getName();
     }
+//    public String getName(){
+//        return name;
+//    }
 }

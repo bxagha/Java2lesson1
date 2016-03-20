@@ -5,5 +5,6 @@ public class Dog extends Animals {
     public Dog(String _name, int _age) {
         name = _name;
         age = _age;
+        type = this.getClass().getName();
     }
 }

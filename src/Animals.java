@@ -4,6 +4,7 @@
 public class Animals {
     protected String name;
     protected int age;
+    protected String type;
 
     public void feed(){
         

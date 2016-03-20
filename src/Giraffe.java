@@ -5,6 +5,7 @@ public class Giraffe extends Animals {
     public Giraffe(String _name, int _age) {
         name = _name;
         age = _age;
+        type = this.getClass().getName();
 
     }
 }
