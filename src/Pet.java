@@ -8,12 +8,7 @@ public class Pet<T extends Animals> {
         pet = _pet;
     }
 
-    public String getName(){
-        return pet.name;
+    public T getPet(){
+        return pet;
     }
-
-    public String getType(){
-        return pet.type;
-    }
-
 }
