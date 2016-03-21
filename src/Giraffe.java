@@ -2,10 +2,11 @@
  * Created by Сергей on 20.03.2016.
  */
 public class Giraffe extends Animals {
-    public Giraffe(String _name, int _age) {
-        name = _name;
-        age = _age;
-        type = this.getClass().getName();
+    private static int count = 0;
 
+    public Giraffe() {
+        super();
+        count++;
+        name = name + "_" + count;
     }
 }
