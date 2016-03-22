@@ -5,24 +5,45 @@ import java.util.Objects;
  * Created by Сергей on 20.03.2016.
  */
 public class Zoo {
-    public static void main(String[] args) {
-        String animals[] = new String [5];
-        animals[0] = "Giraffe";
-        animals[1] = "Cat";
-        animals[2] = "Dog";
-        animals[3] = "Snake";
-        animals[4] = "Elephant";
+    public static final int COUNT_ANIMALS = 50;
+    public static Pet[] pets = new Pet[COUNT_ANIMALS];
 
-        String typePet = animals[Animals.rand.nextInt(5)];
-        ArrayList<Cell> cells = new ArrayList<Cell>();
-        cells.add(new Cell());
-        Giraffe g1 = new Giraffe();
-        Pet<Cat> g2 = new Pet<>(new Cat());
-        Pet<Cat> g3 = new Pet<>(new Cat());
-        System.out.println(g1.getClass().getName() + " " + g1.name + " age " + g1.getAge());
-        System.out.println(g2.getPet().getClass().getName() + " " + g2.getPet().getName() + " age " + g2.getPet().getAge());
-        System.out.println(g3.getPet().getClass().getName() + " " + g3.getPet().getName() + " age " + g3.getPet().getAge());
-        cells.get(0).addPet(new Pet<>(new Cat()));
-        cells.get(0).showCell();
+    public static void main(String[] args) {
+
+        ArrayList<Cell> cells = new ArrayList<Cell>(); //строим зоопарк из безразмерных клеток
+        petIntoZoo(cells);//заселяем зоопарк животными
+        cells.forEach(Cell::showCell);//выводим в консоль все клетки с животными
+    }
+
+    private static void petIntoZoo(ArrayList<Cell> cells) {
+        for (int i = 0; i < pets.length; i++) { //добавляем животных
+            pets[i] = createPet();
+            if (addPetIntoCells(cells, pets[i])) continue;
+            cells.add(new Cell(pets[i]));
+        }
+    }
+
+    private static boolean addPetIntoCells(ArrayList<Cell> cells, Pet pet) {//попытка засунуть жЫвотное в клетку
+        for (Cell _cell : cells) {
+            if (!_cell.addPet(pet)) continue;
+            return true;
+        }
+        return false;
+    }
+
+    public static Pet<?> createPet() {//создаем случайное жЫвотное
+        switch (Animals.rand.nextInt(5)) {
+            case 0:
+                return new Pet<>(new Giraffe());
+            case 1:
+                return new Pet<>(new Cat());
+            case 2:
+                return new Pet<>(new Dog());
+            case 3:
+                return new Pet<>(new Snake());
+            case 4:
+                return new Pet<>(new Elephant());
+        }
+        return new Pet<>(new Cat());
     }
 }
