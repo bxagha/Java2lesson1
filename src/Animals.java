@@ -6,13 +6,20 @@ import java.util.Random;
 public class Animals {
     protected String name;
     protected int age;
-//    private static int count=0;
+    private static int count = 0;
+    protected int id;
+
     public static Random rand = new Random();
 
     public Animals() {
-//        count++;
+        count++;
+        id = count;
         name = this.getClass().getName();
         age = rand.nextInt(10);
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -23,7 +30,7 @@ public class Animals {
         return age;
     }
 
-    public void feed(){
-        
+    public void feed() {
+
     }
 }
