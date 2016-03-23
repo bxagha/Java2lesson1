@@ -18,6 +18,7 @@ public class Animals {
         id = count;
         name = this.getClass().getName();
         age = rand.nextInt(10);
+        eatable = new ArrayList<>();
     }
 
     public int getId() {
