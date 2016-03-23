@@ -8,7 +8,7 @@ public class Pet<T extends Animals> {
         pet = _pet;
     }
 
-    public T getPet(){
+    public T getPet() {
         return pet;
     }
 }
