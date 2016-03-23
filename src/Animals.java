@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -8,6 +9,7 @@ public class Animals {
     protected int age;
     private static int count = 0;
     protected int id;
+    protected ArrayList<Zoo.Food> eatable;
 
     public static Random rand = new Random();
 
