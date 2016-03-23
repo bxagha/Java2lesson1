@@ -40,11 +40,11 @@ public class Animals {
         return false;
     }
 
-    public void feed(Pet<?> _pet, Zoo.Food _food) {
+    public void feed(Zoo.Food _food) {
         if (edibleFood(_food)) {
-            System.out.println("Животное " + _pet.getPet().name + " поело " + _food);
-        }else {
-            System.out.println("Животное " + _pet.getPet().name + " не ест " + _food);
+            System.out.println("Животное " + name + " съело " + _food);
+        } else {
+            System.out.println("Животное " + name + " не ест " + _food);
         }
     }
 }
