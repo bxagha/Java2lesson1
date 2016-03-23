@@ -32,7 +32,18 @@ public class Animals {
         return age;
     }
 
-    public void feed() {
+    public boolean edibleFood(Zoo.Food _food) {
+        for (Zoo.Food _f : eatable) {
+            if (_food.equals(_f)) return true;
+        }
+        return false;
+    }
 
+    public void feed(Pet<?> _pet, Zoo.Food _food) {
+        if (edibleFood(_food)) {
+            System.out.println("Животное " + _pet.getPet().name + " поело " + _food);
+        }else {
+            System.out.println("Животное " + _pet.getPet().name + " не ест " + _food);
+        }
     }
 }
