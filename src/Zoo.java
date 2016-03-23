@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Zoo {
     public static final int COUNT_ANIMALS = 50;
     public static Pet[] pets = new Pet[COUNT_ANIMALS];
+    public enum Food{grass, water, mouse, bone, foliage}
 
     public static void main(String[] args) {
 
