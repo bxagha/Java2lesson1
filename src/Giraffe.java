@@ -8,5 +8,8 @@ public class Giraffe extends Animals {
         super();
         count++;
         name = name + "_" + count;
+        eatable.add(Zoo.Food.foliage);
+        eatable.add(Zoo.Food.grass);
+        eatable.add(Zoo.Food.water);
     }
 }

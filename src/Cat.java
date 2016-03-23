@@ -8,5 +8,7 @@ public class Cat extends Animals {
         super();
         count++;
         name = name + "_" + count;
+        eatable.add(Zoo.Food.water);
+        eatable.add(Zoo.Food.mouse);
     }
 }

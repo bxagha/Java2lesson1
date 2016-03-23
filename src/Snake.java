@@ -8,5 +8,7 @@ public class Snake extends Animals {
         super();
         count++;
         name = name + "_" + count;
+        eatable.add(Zoo.Food.mouse);
+        eatable.add(Zoo.Food.water);
     }
 }
